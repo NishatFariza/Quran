@@ -1,3 +1,10 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
+$color-primary: blue;
+
+.hero-section{
+    background-color: $color-primary;
+}
