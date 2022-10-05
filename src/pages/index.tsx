@@ -1,6 +1,7 @@
 import Head from 'next/head'
 import React from 'react'
 import Hero from '../components/Hero'
+import { Button } from 'antd';
 
 const HomePage = () => {
   return (
@@ -10,7 +11,7 @@ const HomePage = () => {
       </Head>
 
       <Hero/>
-      <h1>Home</h1>
+      <Button type="primary">Hello Button</Button>
     </div>
   )
 }
