@@ -13,8 +13,20 @@ const Hero: React.FC = () => {
           </svg>
 
     </div>
-   <div className='max-w-2xl mx-auto py-10'>
-   <input placeholder='What do you want to read?' type="text" className='w-full border py-3 rounded-full' name="" id="" />
+   <div className='max-w-xl mx-10 md:mx-auto relative '>
+   <input placeholder='What do you want to read?' type="text" className='w-full border py-3 rounded-full px-4 focus:outline-none focus:ring-2 focus:ring-[#03a1b6]' name="" id="" 
+    
+   />
+   <div className='top-3 right-3 absolute flex gap-3'>
+   <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-5 h-5">
+  <path strokeLinecap="round" strokeLinejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z" />
+</svg>
+<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-5 h-5">
+  <path strokeLinecap="round" strokeLinejoin="round" d="M12 18.75a6 6 0 006-6v-1.5m-6 7.5a6 6 0 01-6-6v-1.5m6 7.5v3.75m-3.75 0h7.5M12 15.75a3 3 0 01-3-3V4.5a3 3 0 116 0v8.25a3 3 0 01-3 3z" />
+</svg>
+
+   </div>
+
    </div>
 
     </div>

@@ -9,12 +9,10 @@ $color-primary: blue;
     background-image: url('../../public/images/background.jpg');
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-    margin: 0;
-    
-}
+body {
+    @apply text-slate-700;
+  }
+  
+  .wrapper {
+    @apply max-w-6xl mx-auto px-4 lg:px-0;
+  }
