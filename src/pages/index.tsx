@@ -16,25 +16,7 @@ const HomePage = () => {
        <h2 className='uppercase font-semibold text-xl'>Surah</h2>
 
         <div className='grid grid-cols-1 md:grid-cols-3 gap-5 sm:grid-cols-2'>
-          <Surah/>
-          <Surah/>
-          <Surah/>
-          <Surah/>
-          <Surah/>
-          <Surah/>
-          <Surah/>
-          <Surah/>
-          <Surah/>
-          <Surah/>
-          <Surah/>
-          <Surah/>
-          <Surah/>
-          <Surah/>
-          <Surah/>
-          <Surah/>
-          <Surah/>
-          <Surah/>
-          <Surah/>
+          <Surah name='Al-Fatiha' meaning='The Opener' serial={1}/>
         </div>
      </div>
     </div>
