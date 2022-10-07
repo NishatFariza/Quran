@@ -15,7 +15,7 @@ const HomePage = () => {
      <div className='wrapper py-20'>
        <h2 className='uppercase font-semibold text-xl'>Surah</h2>
 
-        <div>
+        <div className='grid grid-cols-1 md:grid-cols-3 gap-5 sm:grid-cols-2'>
           <Surah/>
           <Surah/>
           <Surah/>
