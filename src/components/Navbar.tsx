@@ -2,8 +2,8 @@ import React from 'react'
 
 const Navbar: React.FC = () => {
   return (
-    <div className='flex justify-between px-8 py-5 fixed top-0 left-0 w-full'>
-        <h1 className='text-xl'>Quran</h1>
+    <div className='flex justify-between px-8 py-2 fixed top-0 left-0 w-full'>
+        <h1 className='text-xl font-semibold'>Quran</h1>
         <nav className='flex items-center gap-4'>
             <button>
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-5 h-5 text-white">
