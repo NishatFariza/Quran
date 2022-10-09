@@ -5,15 +5,18 @@ import Surah from "../components/Surah";
 import axios from "axios";
 
 const HomePage = () => {
-  const [surahs, setSurahs] = useState([]);
+  const [chapters, setChapters] = useState([]);
 
   useEffect(() => {
     axios
-      .get("https://api.quran.com/api/v4/chapters?language=en")
+      .get("https://api.quran.com/api/v3/chapters?language=en")
       .then((res) => {
-        console.log(res.data);
+        setChapters(res.data.chapters);
       });
-  });
+  }, []);
+
+
+  
 
   return (
     <div>
@@ -26,7 +29,9 @@ const HomePage = () => {
         <h2 className="uppercase font-semibold text-xl">Surah</h2>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-5 sm:grid-cols-2">
-          <Surah name="Al-Fatiha" meaning="The Opener" serial={1} />
+          {chapters.map((chapter, i) => {
+            <Surah key={i} name="Al-Fatiha" meaning="The Opener" serial={1} />;
+          })}
         </div>
       </div>
     </div>
