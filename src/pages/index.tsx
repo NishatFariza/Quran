@@ -9,7 +9,7 @@ import { Chapter } from "../Models/ChapterModel";
 const HomePage = () => {
   const [chapters, setChapters] = useState([]);
 
-  const { data, isLoading } = useQuery(["chapters"], async () => {
+  const { data } = useQuery(["chapters"], async () => {
     const res = await axios.get("https://api.quran.com/api/v3/chapters");
     return res.data.chapters as Chapter[];
   });
