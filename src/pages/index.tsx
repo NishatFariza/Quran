@@ -9,31 +9,25 @@ import { Chapter } from "../Models/ChapterModel";
 const HomePage = () => {
   const [chapters, setChapters] = useState([]);
 
-const { data, isLoading } = useQuery(["chapters"], async () => {
-  const res = await axios.get("https://api.quran.com/api/v3/chapters");
-  return res.data.chapters as Chapter[];
-});
-
+  const { data, isLoading } = useQuery(["chapters"], async () => {
+    const res = await axios.get("https://api.quran.com/api/v3/chapters");
+    return res.data.chapters as Chapter[];
+  });
 
   // const {data, isLoading} = useQuery([chapters], () => {
 
   //   const res = await axios.get("https://api.quran.com/api/v3/chapters?language=en");
 
   //   return res.data.chapters as Chapter[]
-    
+
   // })
 
-  
-
   // useEffect(() => {
-    
+
   //     .then((res) => {
   //       setChapters(res.data.chapters);
   //     });
   // }, []);
-
-
-
 
   return (
     <div>
@@ -54,7 +48,8 @@ const { data, isLoading } = useQuery(["chapters"], async () => {
               meaning={chapter.translated_name.name}
               number_of_verses={chapter.verses_count}
               revelation_place={chapter.revelation_place}
-              serial={chapter.chapter_number}
+              serial={chapter.id}
+              bismillah_pre={chapter.bismillah_pre}
             />
           ))}
         </div>

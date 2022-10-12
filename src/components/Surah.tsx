@@ -2,12 +2,24 @@ import { Tooltip } from "antd";
 import React from "react";
 
 interface PropsType {
-  name: string;
+  arabic_name: string;
+  english_name: string;
   meaning: string;
+  number_of_verses: number;
   serial: number;
+  revelation_place: string;
+  bismillah_pre: boolean;
 }
 
-const Surah: React.FC<PropsType> = ({ name, meaning, serial }) => {
+const Surah: React.FC<PropsType> = ({
+  arabic_name,
+  english_name,
+  meaning,
+  number_of_verses,
+  serial,
+  revelation_place,
+  bismillah_pre,
+}) => {
   return (
     <div className="flex gap-5 p-4 border group bg-slate-50 border-slate-300 rounded">
       <div>
@@ -16,18 +28,23 @@ const Surah: React.FC<PropsType> = ({ name, meaning, serial }) => {
         </div>
         <div>
           <Tooltip title="Number of verse">
-            <span className="">{serial}</span>
+            <span className="">{number_of_verses}</span>
           </Tooltip>
         </div>
       </div>
 
       <div>
-        <h3>الفاتحة(Al-Fatiha)</h3>
+        <h3>
+          {arabic_name}
+          {english_name}
+        </h3>
+        {/* <p>{bismillah_pre}</p> */}
         <Tooltip title="The meaning of this surah">
-          <p>{meaning}</p>
+          <span>{meaning}</span>
         </Tooltip>
-
-        <p>makkah</p>
+        <Tooltip title="The place of revelation">
+          <p>{revelation_place}</p>
+        </Tooltip>
       </div>
     </div>
   );
