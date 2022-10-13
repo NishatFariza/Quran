@@ -16,7 +16,7 @@ export interface Chapter {
   id: number;
   revelation_place: RevelationPlace;
   revelation_order: number;
-  bismillah_pre: boolean;
+  // bismillah_pre: boolean;
   name_simple: string;
   name_complex: string;
   name_arabic: string;

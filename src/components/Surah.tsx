@@ -8,7 +8,7 @@ interface PropsType {
   number_of_verses: number;
   serial: number;
   revelation_place: string;
-  bismillah_pre: boolean;
+  
 }
 
 const Surah: React.FC<PropsType> = ({
@@ -18,7 +18,7 @@ const Surah: React.FC<PropsType> = ({
   number_of_verses,
   serial,
   revelation_place,
-  bismillah_pre,
+  // bismillah_pre,
 }) => {
   return (
     <div className="flex gap-5 p-4 border group cursor-pointer bg-slate-50 border-slate-300 rounded">
@@ -28,16 +28,16 @@ const Surah: React.FC<PropsType> = ({
         </div>
 
         <Tooltip title="Number of verse" color="cyan" placement="bottom">
-          <span className="">{number_of_verses}</span>
+          <span className="mt-2 font-semibold text-gray-600">
+            {number_of_verses}
+          </span>
         </Tooltip>
       </div>
 
       <div>
-        <h3>
-          {arabic_name}
-          {english_name}
+        <h3 className="text-xl">
+          {arabic_name} ({english_name})
         </h3>
-        {/* <p>{bismillah_pre}</p> */}
         <Tooltip title="The meaning of this surah">
           <span>{meaning}</span>
         </Tooltip>

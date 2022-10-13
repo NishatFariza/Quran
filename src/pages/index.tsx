@@ -49,7 +49,6 @@ const HomePage = () => {
               number_of_verses={chapter.verses_count}
               revelation_place={chapter.revelation_place}
               serial={chapter.id}
-              bismillah_pre={chapter.bismillah_pre}
             />
           ))}
         </div>
