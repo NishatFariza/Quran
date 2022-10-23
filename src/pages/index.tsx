@@ -60,19 +60,22 @@ const HomePage: NextPage<props> = ({x}) => {
               serial={chapter.id}
             />
           ))} */}
+          
         </div>
       </div>
     </div>
   );
 };
 
-// export const getServerSideProps: GetServerSideProps = axios() => {
-  
-//   return {
-//     props:{
-//       x: 10,
-//     }
-//   }
-// }
+export const getServerSideProps: GetServerSideProps = axios () => {
+  const res = await axios.get("https://api.quran.com/api/v3/chapters");
+
+
+  return {
+    props:{
+      chapters: res.data.chapters,
+    }
+  }
+}
 
 export default HomePage;
