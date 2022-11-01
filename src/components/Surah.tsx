@@ -18,7 +18,7 @@ const Surah: React.FC<PropsType> = ({
   number_of_verses,
   serial,
   revelation_place,
-  // bismillah_pre,
+  
 }) => {
   return (
     <div className="flex gap-5 p-4 border group cursor-pointer bg-slate-50 border-slate-300 rounded">

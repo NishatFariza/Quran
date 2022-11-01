@@ -4,6 +4,7 @@ import { GetServerSideProps, NextPage } from "next";
 import Head from "next/head";
 import Link from "next/link";
 import { useState } from "react";
+import httpClient from "../app/httpClient";
 import Hero from "../components/Hero";
 import Surah from "../components/Surah";
 import { Chapter } from "../Models/ChapterModel";
@@ -51,7 +52,7 @@ const HomePage: NextPage<props> = ({chapters}) => {
 
 // This make sure that the data is fetched before the page is rendered
 export const getServerSideProps: GetServerSideProps = async () => {
-    const res = await axios.get("https://api.quran.com/api/v3/chapters");
+    const res = await httpClient.get("chapters")
 
   return {
     props: {
