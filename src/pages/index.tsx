@@ -8,30 +8,20 @@ import Surah from "../components/Surah";
 import { Chapter } from "../Models/ChapterModel";
 
 
+interface props{
+  chapters: Chapter[];
+}
 
 
-const HomePage = () => {
-  const [chapters, setChapters] = useState([]);
 
-  const { data } = useQuery(["chapters"], async () => {
-    const res = await axios.get("https://api.quran.com/api/v3/chapters");
-    return res.data.chapters as Chapter[];
-  });
+const HomePage: NextPage<props> = ({chapters}) => {
+  // const [chapters, setChapters] = useState([]);
 
-  // const {data, isLoading} = useQuery([chapters], () => {
+  // const { data } = useQuery(["chapters"], async () => {
+  //   const res = await axios.get("https://api.quran.com/api/v3/chapters");
+  //   return res.data.chapters as Chapter[];
+  // });
 
-  //   const res = await axios.get("https://api.quran.com/api/v3/chapters?language=en");
-
-  //   return res.data.chapters as Chapter[]
-
-  // })
-
-  // useEffect(() => {
-
-  //     .then((res) => {
-  //       setChapters(res.data.chapters);
-  //     });
-  // }, []);
 
   return (
     <div>
@@ -41,12 +31,12 @@ const HomePage = () => {
 
       <Hero />
 
-      <h1 className="text-xl font-semibold">x</h1>
+   
       <div className="wrapper py-20">
         <h2 className="uppercase font-semibold text-xl">Surah</h2>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-5 sm:grid-cols-2">
-           {data?.map((chapter, i) => (
+           {chapters?.map((chapter, i) => (
             <Surah
               key={i}
               arabic_name={chapter.name_arabic}
@@ -56,12 +46,23 @@ const HomePage = () => {
               revelation_place={chapter.revelation_place}
               serial={chapter.id}
             />
-          ))} 
-           
+          ))}  
+          
         </div>
       </div>
     </div>
   );
 };
+
+
+export const getServerSideProps: GetServerSideProps = async () => {
+    const res = await axios.get("https://api.quran.com/api/v3/chapters");
+
+  return {
+    props: {
+      chapters: res.data.chapters,
+    },
+  };
+}
 
 export default HomePage;
