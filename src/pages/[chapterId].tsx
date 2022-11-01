@@ -1,11 +1,24 @@
 import { useRouter } from 'next/router'
 import React from 'react'
+import { GetServerSideProps, NextPage } from "next";
 
-const ChapterDetails = () => {
-    const router = useRouter()
+interface Props{
+    chapterId: string;
+}
+
+const ChapterDetails: NextPage<Props> = ({chapterId}) => {
+    
   return (
-    <div>ChapterDetails</div>
+      <div>ChapterDetails: {chapterId}</div>
   )
+}
+
+export const  getServerSideProps: GetServerSideProps = async (context) =>{
+    return {
+      props: {
+        chapterId: context.query.chapterId as string,
+      },
+    };
 }
 
 export default ChapterDetails;
